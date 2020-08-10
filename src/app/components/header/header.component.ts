@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  /** Recupera palavra digitada no filtro de busca */
   searchPokemon(keyword: string) {
-    console.log(keyword);
     this.routes.navigate(['search', keyword]);
   }
 

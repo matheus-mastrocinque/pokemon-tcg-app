@@ -27,7 +27,6 @@ export class PokemonsService {
   }
 
   public getter() {
-    // debugger;
     this.pokemonService.getCards().subscribe((data) => {
       this.cards = data.cards;
     }, error => {
@@ -36,7 +35,6 @@ export class PokemonsService {
   }
 
   searchPokemon(keyword: string) {
-    debugger;
     keyword = keyword.toLowerCase();
     for (this.pokemon of this.cards) {
       this.name = this.pokemon[0].name.toLowerCase();

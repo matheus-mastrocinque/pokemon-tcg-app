@@ -11,6 +11,7 @@ import { Cards } from 'src/app/models/pokemon.model';
 export class PokemonDetailsComponent implements OnInit {
   cards;
   pokemon: Cards[] = [];
+  error: any;
 
   constructor(public ParamsRouter: ActivatedRoute, public pokemonService: PokemonsService) { }
 
@@ -31,7 +32,7 @@ export class PokemonDetailsComponent implements OnInit {
         this.getIdPokemon();
       }
       }, error => {
-
+        this.error = error;
       }
     );
   }

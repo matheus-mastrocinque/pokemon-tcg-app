@@ -26,7 +26,6 @@ export class PokemonsComponent implements OnInit {
       this.pokemonsService.getCards().subscribe((data) => {
         this.cards = data.cards;
         this.cards = this.cards.sort((a, b) => (a.name < b.name) ? -1 : 1);
-        console.log(this.cards);
       }, error => {
         this.error = error;
       });
