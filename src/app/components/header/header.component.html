@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img class="wallp-width" src="../../../assets/images/pokemontcg.png" alt=""></a>
+  
+    <div class="collapse navbar-collapse mgn-navbar" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link text-baloo" [routerLink]="['home']">Início</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link text-baloo" [routerLink]="['pokemons']">Pokémons</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Busca por nome" (keyup.enter)="searchPokemon(keyword.value)" #keyword>
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit" (click)="searchPokemon(keyword.value)"><img src="../../../assets//images/procurar.png" alt=""></button>
+      </form>
+    </div>
+  </nav>

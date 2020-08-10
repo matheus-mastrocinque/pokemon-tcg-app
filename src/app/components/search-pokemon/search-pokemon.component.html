@@ -1,0 +1,29 @@
+<div class="page-header card-position"></div>
+
+<div class="alert alert-dismissible alert-warning" *ngIf="notFound === true">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading">Oops!</h4>
+    <p class="mb-0">Não foram encontrados Pokemons com este nome :( </p>
+  </div>
+
+<div class="row">
+    <div class="col-md-3 mt-10" *ngFor="let pokemon of pokemonResult">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a [routerLink]="['/pokemon', pokemon.id]"><img src="{{pokemon.imageUrl}}" alt="Imagem do Pokemon {{ pokemon.name }}"></a>
+            </div>
+            <div class="panel-footer white-color text-center text-cards">
+                {{ pokemon.name }}
+            </div>
+            <div class="panel-footer white-color text-center text-cards">
+                {{ pokemon.id }}
+            </div>
+            <div class="panel-footer white-color text-center text-cards">
+                {{ pokemon.types }}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

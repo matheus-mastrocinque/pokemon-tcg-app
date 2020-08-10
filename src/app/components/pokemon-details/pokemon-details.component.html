@@ -1,0 +1,74 @@
+<div *ngIf="pokemon[0] !== undefined" class="page-header">
+    <button type="button" class="btn btn-secondary btn-back-pokemons"><img src="../../../assets/images/de-volta.png" [routerLink]="['/pokemons']" alt="Botão de voltar"></button>
+    <h1 class="text-baloo">{{ pokemon[0].name }}</h1>
+    
+
+    <div class="row">
+        <div class="col-md-3 mt-10">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="{{ pokemon[0].imageUrl}}" alt="Imagem do Pokemon {{ pokemon[0].name }}">
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <tbody>
+              <tr class="table-secondary">
+                <th scope="col">Nome</th>
+                <td>{{ pokemon[0].name }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">ID</th>
+                <td>{{ pokemon[0].id }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Tipo</th>
+                <td *ngIf="pokemon[0].types !== undefined">{{ pokemon[0].types }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Resistências</th>
+                <td *ngIf="pokemon[0].resistances !== undefined">{{ pokemon[0].resistances[0].type }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Fraquezas</th>
+                <td *ngIf="pokemon[0].weaknesses !== undefined">{{ pokemon[0].weaknesses[0].type }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Ataque 1</th>
+                <td *ngIf="pokemon[0].resistances !== undefined">{{ pokemon[0].attacks[0].name }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Custo de Energia</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[0].convertedEnergyCost}}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Dano</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[0].damage }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Descrição Ataque</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[0].text }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Ataque 2</th>
+                <td *ngIf="pokemon[0].resistances !== undefined">{{ pokemon[0].attacks[1].name }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Custo de Energia</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[1].convertedEnergyCost}}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Dano</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[1].damage }}</td>
+              </tr>
+              <tr class="table-secondary">
+                <th scope="col">Descrição Ataque</th>
+                <td *ngIf="pokemon[0].attacks !== undefined">{{ pokemon[0].attacks[1].text }}</td>
+              </tr>
+            </tbody>
+          </table> 
+    </div>
+</div>
+
+
+
